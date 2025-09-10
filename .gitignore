@@ -1,0 +1,16 @@
+#macOS
+.DS_Store
+
+#R
+.Rhistory
+.Rproj.user/
+.Ruserdata
+.RData
+.Rproj.user
+.Rproj.user/*
+*.Rproj
+
+# Logs / temp
+*.log
+*.tmp
+

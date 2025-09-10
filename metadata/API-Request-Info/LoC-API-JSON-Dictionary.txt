@@ -1,0 +1,204 @@
+####------- Metadata Dictionary -------#####
+
+### rowID
+  # description: numeric; created during manipulation.
+
+### title
+  # keep: true 
+  # new: descriptive_title
+  # description: character; the header of the resource web UI. It generally includes page number, newspaper title, city and state of publication, and date of publication. Example: Image 7 of The Sun (New York [ N.Y.], January 1, 1893).
+
+### partof_title 
+  # keep: true
+  # new: newspaper_title; city_of_publication; county_of_publication; state_of_publication; start_date; end_date
+  # description: character; original attribute referred to the title of the newspaper, but also included city and state of publication, as well as time span of publication. New derivative attributes kept the same information stored separately.
+
+### other_title
+  # keep: true
+  # new: newspaper_alt_title
+  # description: list; all the alternative titles under which the newspaper was historically published, even if irregularly.
+
+### shelf_id 
+  # keep: true
+  # new: sequence
+  # description: numeric; internal sorting field for Library of Congress records. In the case of Chronicling America resources, it refers to the sequence number (page number) of the newspaper scan (not page number of the actual newspaper).
+
+### number_page
+  # keep: true
+  # new: sequence_2
+  # description: numeric; I am not convinced that shelf_id is always correct nor that number_page refers to the same thing. I am keeping both to test and see if they match. If so, I'll keep one and remove the other.
+
+### number_lccn
+  # keep: true
+  # new: lccn
+  # description: character; control number specific to Library of Congress
+
+### page_id
+  # keep: true
+  # new: page_id
+  # description: character; ID specific to Library of Congress, refers to the page of the newspaper that includes matching results to the query.
+
+### publication_frequency 
+  # keep: true
+  # new: publication_frequency
+  # description: character; example: daily, weekly, semiweekly.
+
+### date
+  # keep: true
+  # new: full_date; day; month; year
+  # description: character (date); formatted as "YYYY-mm-dd", which is why this should not be transformed to numeric. Original attribute was kept, but split to create day, month, and year as separate attributes.
+
+### location_city
+  # keep: true
+  # new: city_coverage
+  # description: list; all cities in which newspaper was published
+
+### location_county
+  # keep: true
+  # new: county_coverage
+  # description: list; all counties in which newspaper was published
+
+### location_state
+  # keep: true
+  # new: state_coverage
+  # description: list; all states in which newspaper was published
+
+### batch
+  # keep: true 
+  # new: batch
+  # description: character; the Library of Congress receives digitized newspaper content from contributors in the National Digital Newspaper Program (NDNP) in the form of batches. Each batch can contain one or more issues, from one or more newspapers. This attribute refers to the batch to which a certain resource belongs, or its provenance.
+
+### contributor
+  # keep: true
+  # new: provenance
+  # description: list; includes the names of the NDPD contributors who provided the batch of newspaper content to Chronicling America.
+
+### language
+  # keep: true
+  # new: language
+  # description: character; the language of the newspaper text and therefore its OCR data. Useful in case the API requests accidentally pulls articles from different languages, so it doesn't skew the text analysis.
+
+### description 
+  # keep: true
+  # new: snippet_ocr
+  # description: character; for other Library of Congress records, this attribute includes a short description of the original physical item, which shows up in a list of search results. For newspapers in Chronicling America, specifically, this is equivalent to a snippet of the ocr text that is relevant to the query results.
+
+### segmentof 
+  # keep: true
+  # new: resource_url
+  # description: character; the base URL for the resource (newspaper), not specific to page number or query search terms.
+
+### id 
+  # keep: true
+  # new: sequence_url
+  # description: character; page-level variation of the base URL.
+
+### url 
+  # keep: true
+  # new: query_url
+  # description: character; a variation of the base URL that returns to the resource UI with query search terms highlighted by default.
+
+### index 
+  # keep: true
+  # new: query_index
+  # description: numeric; the index number of the result among all results. Starts with 1 and continues through all of the results in the whole set (not just the specific page). Dependent on sort_by parameter.
+
+### word_coordinates_url 
+  # keep: true
+  # new: query_url_xml
+  # description: character; a variation of the base URL utilizing the text-services/ endpoint that returns the relevant snippet of OCR data in ALTO XML format. 
+
+### image_url
+  # keep: true
+  # new: jpg_url
+  # description: list; links to varied resolutions of the resource JPG scan
+
+### subject
+  # keep: false
+  # new: n/a
+  # description: list; all the Library of Congress-specific Subject Headings (LCSH) associated with the resource. does not include geography, which is under location.
+
+### location 
+  # keep: false
+  # new: n/a
+  # description: list; combined geographic information of publication coverage
+
+###--- attributes below were removed and are not worth my time explaining ---###
+
+### access_restricted
+  # keep: false
+### aka
+  # keep: false
+### campaigns
+  # keep: false
+### composite_location
+  # keep: false
+### dates
+  # keep: false
+### digitized
+  # keep: false
+### extract_timestamp
+  # keep: false
+### group
+  # keep: false
+### has segments
+  # keep: false
+### mime_type
+  # keep: false
+### number
+  # keep: false
+### number_edition
+  # keep: false
+### number_reel
+  # keep: false
+### online_format
+  # keep: false
+### original_format
+  # keep: false
+### parrot
+  # keep: false
+### partof_collection
+  # keep: false
+### partof_division
+  # keep: false
+### partof_title
+  # keep: false
+### resources
+  # keep: false
+### site
+  # keep: false
+### subject_ethnicity
+  # keep: false
+### timestamp
+  # keep: false
+### type
+  # keep: false
+
+
+
+####------------- Examples of URLs included in image_url attribute --------------####
+
+
+* Default, full-scale JPG file:
+
+https://tile.loc.gov/image-services/iiif/service:ndnp:nn:batch_nn_fernandez_ver01:data:sn83030272:00175045065:1893010101:0015/full/full/0/default.jpg
+
+* 6.25/100 of the total file, option provided on the website download dropdown and under "image_url" variable in the JSON data object: 
+
+https://tile.loc.gov/image-services/iiif/service:ndnp:nn:batch_nn_fernandez_ver01:data:sn83030272:00175045065:1893010101:0015/full/pct:6.25/0/default.jpg#h=409&w=327
+
+* 12.50/100 of the total file, option provided on the website download dropdown and under "image_url" variable in the JSON data object: 
+
+https://tile.loc.gov/image-services/iiif/service:ndnp:nn:batch_nn_fernandez_ver01:data:sn83030272:00175045065:1893010101:0015/full/pct:12.5/0/default.jpg#h=818&w=654
+
+* ALTO XML file (OCR):
+
+https://tile.loc.gov/text-services/word-coordinates-service?segment=/service/ndnp/nn/batch_nn_fernandez_ver01/data/sn83030272/00175045065/1893010101/0015.xml&format=alto_xml
+
+* JP2 file from the storage-services endpoint:
+
+https://tile.loc.gov/storage-services/service/ndnp/nn/batch_nn_fernandez_ver01/data/sn83030272/00175045065/1893010101/0015.jp2
+
+* PDF file from the storage-services endpoint:
+
+https://tile.loc.gov/storage-services/service/ndnp/nn/batch_nn_fernandez_ver01/data/sn83030272/00175045065/1893010101/0015.pdf
