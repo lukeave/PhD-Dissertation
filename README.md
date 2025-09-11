@@ -4,7 +4,7 @@ This is the repository for my PhD Dissertation at Clemson University. Please not
 
 As a digital history project, my dissertation uses methodologies of text mining to assess how newspapers discussed and promoted the spatiality and rhetoric of the American empire on display during world's fairs between the Civil War and World War II. Newspapers stories about international expositions informed how U.S. Americans thought of themselves and their role in the world, complicating their notions of foreigness and domesticity while also legitimizing U.S. imperialistic ambitions abroad. I hope to understand how the imagined geography of an American empire on display during those events changed over time in response to hemispheric relations and the growing significance of Latin America in the political discourse of U.S. state-building officials over time. By attending to the cultural commentary about the fairs, I argue that those events served as spaces of symbolic negotiation and legitimation of imperial projects between the United States and Latin America.
 
-As of September 2025, I am in the process of completing the first step of data collection for the project. During this step, I am retrieving newspaper metadata from the Library of Congress digital collections using the website's API. For each one of the most significant fairs at the turn of the century, I am collecting newspaper articles that reference the event for the span of a year (before, during, and after the event is over). In the next phase of data colleciton, I will reprocess the JPG files of newspaper scans to extract machine-readable text data using an optical character recognition engine.
+As of September 2025, I am in the process of completing the first step of data collection for the project. During this step, I am retrieving newspaper metadata from the Library of Congress digital collections using the website's API. For each one of the most significant fairs at the turn of the century, I am collecting newspaper articles that reference the event for the span of a year or more (before, during, and after the event is over). In the next phase of data colleciton, I will reprocess the JPG files of newspaper scans to extract machine-readable text data using an optical character recognition engine.
 
 The content in this repository is organized in three major directories: code, data, and metadata.
 
@@ -14,15 +14,15 @@ The content in this repository is organized in three major directories: code, da
 
     Contains the preprocessing scripts in R that were used to retrieve newspaper metadata from the Library of Congress for each significant world's fair between 1876 and 1940 through the website's API.
 
-- ### OCR processing:
+- #### OCR processing:
 
     After all the newspaper metadata is retrieved and preprocessed, this subdirectory will hold the code scripts for OCR extraction, tokenization, and other text data post-processing steps.
 
-- ### WEM training:
+- #### WEM training:
 
     This subdirectory will store the scripts that take post-processed OCRed text as training data for Word Embedding Models.
 
-- ### support scripts:
+- #### support scripts:
 
     Any supporting scripts that are not integral parts of the streamlined workflow of data collection, processind, and analysis will be stored in this subdirectory.
 
