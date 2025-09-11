@@ -46,23 +46,23 @@ The files in this directory derive from the manipulation of JSON data acquired t
 
 - #### Partial-Results:
 
-    This directory is used when an API Request is interrupted before all the query results are retrieved. Interrupted Requests must be complete in multiple sessions, and ``newspaper-metadata_partial.csv`` files store partial results fetched during an incomplete API Request session. The correspondent ``API-Request-Info/*-state.rds`` file serves as a point of reference for the next Request to be submitted. New results will be appended to the existing file in this directory until no more results are available. When the Request is complete and the final metadata file is created in the ``Complete-Results/`` directory, partial results files are programmatically deleted. When no partial files exist, this directory does not show in the Git repository.
+    This directory is used when an API Request is interrupted before all the query results are retrieved. Interrupted Requests must be complete in multiple sessions, and ``newspaper-metadata_partial.csv`` files store partial results fetched during an incomplete API Request session. The correspondent ``API-Request-Info/*-state.rds`` file serves as a point of reference for the next Request to be submitted. New results will be appended to the existing file in this directory until no more results are available. When the Request is complete and the final metadata file is created in the ``Complete-Results/`` directory, partial results files are programmatically deleted. When no partial files exist, this directory does not show in the GitHub repository.
 
 - #### Missing-Results:
 
-    In rare circumstances, API Requests might skip matching results to the query due to problems in the HTTPS connection, internal corrupted indexing in the LoC digital collections, or other similar issue. During preprocessing and manipulation of the JSON object, the integrity of resulting metadata files is verified by comparing the query result index of retrieved observations to the expected numerical sequence. If an index turns out to be missing from a metadata file, that file is moved into this directory for troubleshooting and manual integrity verification. After missing results and their respective index numbers are recovered and validated, the metadata file is moved back into ``Complete-Results/``.
+    In rare circumstances, API Requests might skip matching results to the query due to problems in the HTTPS connection, internal corrupted indexing in the LoC digital collections, or other similar issue. During preprocessing and manipulation of the JSON object, the integrity of resulting metadata files is verified by comparing the query result index of retrieved observations to the expected numerical sequence. If an index turns out to be missing from a metadata file, that file is moved into this directory for troubleshooting and manual integrity verification. After missing results and their respective index numbers are recovered and validated, the metadata file is moved back into ``Complete-Results/``. When all pending verification is complete, this directory does not show in the GitHub repository.
 
 
 ## data
-*Note: Currently, this directory only exists locally and is not available in the GitHub repository. Data files will be added as the project progresses.
-This directoy will store machine-readable text data for analysis, and these data files will be structured and organized under four main categories:
+*Note: Currently, this directory only exists locally and is not available in the GitHub repository. Data files will be added as the research progresses.
+This directoy will store machine-readable text data for analysis, and these data files will tentatively be structured and organized under four main categories:
 
 - #### raw OCR data:
-    The raw OCRed text data extracted from newspaper scans with matching query results. The files in this directoy will contain noisy OCR data and are to be used for OCR quality control and acurracy confidence validation.
+    The raw OCRed text data extracted from newspaper scans with matching query results. The files in this directory will contain noisy OCR data as they might be used to support OCR quality control and assessment of term acurracy confidence rates.
 
 - #### tokenized data:
 
-    The text data files for each world's fair. Each observation in a ``token-data.csv`` file is an n-gram token and it should include relevant metadata for quantitative analysis. Tokenized text data can be used for the most basic types of text anlysis, like relative term frequency.
+    The ``token-data.csv`` files for each world's fair where each observation will consist of an n-gram token and associated metadata for quantitative analysis. Tokenized text data can be used for the most basic types of text anlysis, like relative term frequency, but it often is a first step in data exploratory analysis that yields new research questions.
 
 - #### TXT files:
 
