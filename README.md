@@ -16,23 +16,27 @@ The <b>code</b> directory primarily hosts preprocessing scripts in R language th
 This directory is organized in three subdirectories:
 
 - <h4>API-Request-Info</h4>
-Contains the "state.rds" files that store the current variables utilized for the API Request loop during preprocessing. The information on these files is updated every time a new API request is sent to ensure data integrity in case the request is suddenly interrupted due to connectivity issues. "state.rds" files will keep up-to-date information on crucial variables for the API Request loop to run properly, like total number of retrieved results, current query results page number, and current API url to be used during the GET request. When all the metadata have been fetched for a specific query, these files also reflect that and protect data integrity by avoiding duplicate requests. Lastly, the "LoC-API-JSON-Dictionary.txt" stores brief descriptions for each default variable that comes in the JSON Response object as well as their new titles, if any, in the final metadata file.
+Contains the ``state.rds`` files that store the current variables utilized for the API Request loop during preprocessing. The information on these files is updated every time a new API request is sent to ensure data integrity in case the request is suddenly interrupted due to connectivity issues. ``state.rds`` files will keep up-to-date information on crucial variables for the API Request loop to run properly, like total number of retrieved results, current query results page number, and current API url to be used during the GET request. When all the metadata have been fetched for a specific query, these files also reflect that and protect data integrity by avoiding duplicate requests. Lastly, the ``LoC-API-JSON-Dictionary.txt`` stores brief descriptions for each default variable that comes in the JSON Response object as well as their new titles, if any, in the final metadata file.
 
 - <h4>Complete-Results</h4>
-Contains the complete, clean, and date-sorted metadata files created through manipulation of the JSON Response object during the preprocessing step. There is one "newspaper-metadata.csv" file and one `newspaper-metadata.xlsx" file for each significant world's fair, and file names reflect the year of the event. The exception is "1915-newspaper-metadata.csv" and its "xlsx" version, as these contain metadata related to both San Francisco's 1915 World's Fair and San Diego's 1916 World's Fair. The use of "1915" in the file name was an arbitrary choice resulting from the methodological choice of examining these two expositions together for their specific historical context.
+Contains the complete, clean, and date-sorted metadata files created through manipulation of the JSON Response object during the preprocessing step. There is one ``newspaper-metadata.csv`` file and one ``newspaper-metadata.xlsx`` file for each significant world's fair, and file names reflect the year of the event. The exception is ``1915-newspaper-metadata.csv`` and its ``xlsx`` version, as these contain metadata related to both San Francisco's 1915 World's Fair and San Diego's 1916 World's Fair. The use of "1915" in the file name was an arbitrary choice resulting from the methodological choice of examining these two expositions together for their specific historical context.
 
 - <h4>Results-Count</h4>
-Countains one "newspaper-count.csv" file for each world's fair. File names reflect the year of the event. These files have the aggregated query results from Chronicling America and grouped by newspaper and place of publication.
+Countains one ``newspaper-count.csv`` file for each world's fair. File names reflect the year of the event. These files have the aggregated query results from Chronicling America and grouped by newspaper and place of publication.
 
 
 <h3>data</h3>
 *Note: Currently, this directory only exists locally and is not available in the GitHub repository. Data files will be added as the project progresses.
 This directoy contains the machine-readable text data to be analyzed in this project is organized in four subdirectories:
 
-- <h4>raw OCR data</h4>: Contains the raw OCRed text data extracted from newspaper scans with matching query results. The files in this directoy contain noisy OCR data and are to be used for OCR quality validation.
+- <h4>raw OCR data</h4>: 
+Contains the raw OCRed text data extracted from newspaper scans with matching query results. The files in this directoy contain noisy OCR data and are to be used for OCR quality validation.
 
-- <h4>tokenized data</h4>: Contains the text data files for each world's fair. Each observation in a "token-data.csv" file is a word.
+- <h4>tokenized data</h4>: 
+Contains the text data files for each world's fair. Each observation in a ``token-data.csv`` file is a word.
 
-- <h4>TXT files</h4>: Contains the ".txt" files with the machine-readable text of each newspaper article collected from Chornicling America. Files to be added in this directory must go through post-processing to mitigate OCR issues to the extent that is possible.
+- <h4>TXT files</h4>: 
+Contains the  ``.txt`` files with the machine-readable text of each newspaper article collected from Chornicling America. Files to be added in this directory must go through post-processing to mitigate OCR issues to the extent that is possible.
 
-- <h4>WEM</h4>: Contains the full corpus ".txt" files used to train Word Embedding Models and the models themselves stored in ".bin" files.
+- <h4>WEM</h4>: 
+Contains the full corpus ``.txt`` files used to train Word Embedding Models and the models themselves stored in ``.bin`` files.
