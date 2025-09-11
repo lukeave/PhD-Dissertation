@@ -22,7 +22,7 @@ Contains the ``state.rds`` files that store the current variables utilized for t
 Contains the complete, clean, and date-sorted metadata files created through manipulation of the JSON Response object during the preprocessing step. There is one ``newspaper-metadata.csv`` file and one ``newspaper-metadata.xlsx`` file for each significant world's fair, and file names reflect the year of the event. The exception is ``1915-newspaper-metadata.csv`` and its ``xlsx`` version, as these contain metadata related to both San Francisco's 1915 World's Fair and San Diego's 1916 World's Fair. The use of "1915" in the file name was an arbitrary choice resulting from the methodological choice of examining these two expositions together for their specific historical context.
 
 - <h4>Results-Count</h4>
-Countains one ``newspaper-count.csv`` file for each world's fair. File names reflect the year of the event. These files have the aggregated query results from Chronicling America and grouped by newspaper and place of publication.
+Contains one ``newspaper-count.csv`` file for each world's fair. File names reflect the year of the event. These files have the aggregated query results from Chronicling America and grouped by newspaper and place of publication.
 
 
 <h3>data</h3>
