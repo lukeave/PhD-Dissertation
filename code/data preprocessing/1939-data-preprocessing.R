@@ -278,7 +278,7 @@ loc_url_to_full_jpeg <- function(url) {
 
 # Isolate one URL from the image_url attribute, discard others
 metadata <- metadata %>%
-  separate_wider_delim(image_url, ",", name = c("image_url", "trash_1", "trash_2"), too_few = "align_start", too_many = "drop") %>%
+  separate_wider_delim(image_url, ",", names = c("image_url", "trash_1", "trash_2"), too_few = "align_start", too_many = "drop") %>%
   select(-trash_1, -trash_2)
 
 # Create new column for full-res JPG URL
