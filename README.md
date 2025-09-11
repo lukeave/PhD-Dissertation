@@ -16,7 +16,7 @@ The content in this repository is organized in three major directories: code, da
 
 - #### OCR processing:
 
-    After all the newspaper metadata is retrieved and preprocessed, this subdirectory will hold the code scripts for OCR extraction, tokenization, and other text data post-processing steps.
+    After all the newspaper metadata is retrieved and preprocessed, this subdirectory will hold the code scripts for OCR extraction, tokenization, and other text data post-processing steps. Currently, this subdirectory only exists locally.
 
 - #### WEM training:
 
@@ -24,7 +24,7 @@ The content in this repository is organized in three major directories: code, da
 
 - #### support scripts:
 
-    Any supporting scripts that are not integral parts of the streamlined workflow of data collection, processind, and analysis will be stored in this subdirectory.
+    Any supporting scripts that are not integral parts of the streamlined workflow of data collection, processing, and analysis will be stored in this subdirectory.
 
 
 
