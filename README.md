@@ -10,19 +10,19 @@ The content in this repository is organized in three major directories: code, da
 
 ## code
 
-- #### data preprocessing:
+- #### data-preprocessing:
 
     Contains the preprocessing scripts in R that were used to retrieve newspaper metadata from the Library of Congress for each significant world's fair between 1876 and 1940 through the website's API.
 
-- #### OCR processing:
+- #### ocr-processing:
 
     After all the newspaper metadata is retrieved and preprocessed, this subdirectory will hold the code scripts for OCR extraction, tokenization, and other text data post-processing steps. Currently, this subdirectory only exists locally.
 
-- #### WEM training:
+- #### wem-training:
 
     This subdirectory will store the scripts that take post-processed OCRed text as training data for Word Embedding Models.
 
-- #### support scripts:
+- #### support-scripts:
 
     Any supporting scripts that are not integral parts of the streamlined workflow of data collection, processing, and analysis will be stored in this subdirectory.
 
@@ -57,17 +57,17 @@ The files in this directory derive from the manipulation of JSON data acquired t
 *Note: Currently, this directory only exists locally and is not available in the GitHub repository. Data files will be added as the research progresses.
 This directoy will store machine-readable text data for analysis, and these data files will tentatively be structured and organized under four main categories:
 
-- #### raw OCR data:
+- #### raw-ocr-data:
     The raw OCRed text data extracted from newspaper scans with matching query results. The files in this directory will contain noisy OCR data as they might be used to support OCR quality control and assessment of term acurracy confidence rates.
 
-- #### tokenized data:
+- #### tokenized-data:
 
     The ``token-data.csv`` files for each world's fair where each observation will consist of an n-gram token and associated metadata for quantitative analysis. Tokenized text data can be used for the most basic types of text anlysis, like relative term frequency, but it often is a first step in data exploratory analysis that yields new research questions.
 
-- #### TXT files:
+- #### txt-files:
 
     The tidy, individual ``.txt`` files with the machine-readable text of each newspaper article collected from Chornicling America. Files to be added in this directory must go through post-processing to mitigate OCR issues.
 
-- #### WEM:
+- #### wem:
 
     The full corpus ``.txt`` files to be used as training data for Word Embedding Models and the models themselves stored in ``.bin`` files.
